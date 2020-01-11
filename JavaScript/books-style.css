@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: rgb(26,141,95);
+    color: white;
+
+    height: 200px;
+    width: 100%;
+}
