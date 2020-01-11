@@ -1,3 +1,5 @@
+let myLibrary = [];
+
 function books(title, author, noOfPages, isBookRead) {
 
     this.title = title;
@@ -10,6 +12,10 @@ function books(title, author, noOfPages, isBookRead) {
     };
 }
 
-let book = new books("a", "b", 30, false);
+function addBookToLibrary(book) {
+    myLibrary.push(book);
+}
 
-console.log(book.info());
+function render() {
+    
+}
