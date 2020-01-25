@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./books-style.css">
-    <script src="./books.js"></script>
     <title>Library</title>
 </head>
 <body>
@@ -13,13 +12,67 @@
         <h1 class="heading">Library</h1>
     </header>
     <main>
-        <p>Books in library</p>
         <div class="table-container">
             <table id="books-table">
+
+                <thead>
+                    <tr style="background-color: #F5F8FF">
+                        <th id="serial-no">#</th>
+                        <th>Book Name</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
                 
+                <tbody id="tbody">
+
+                </tbody>
             </table>
+
+            <div>
+                <div class="form-container">
+                    <div class="flex-row">
+                        <button id="add-book-btn">Add Book</button>
+                        <button id="remove-book-btn">Remove Book</button>
+                    </div>
+
+                    <form action="#" class="hidden add-book-form flex-column" id="form">
+
+                        <div class="form-field flex-row">
+                            <label for="book-name">Book name:</label>
+                            <input type="text" id="book-name">
+                        </div>
+
+                        <div class="form-field flex-row">
+                            <label for="author">Author: </label>
+                            <input type="text" id="author">
+                        </div>
+
+                        <div class="form-field flex-row">
+                            <label for="number-of-pages">Pages:</label>
+                            <input type="number" id="number-of-pages">
+                        </div>
+
+                        
+                        <div class="form-field flex-row">
+                            <legend>Read status</legend>
+
+                            <input type="radio" name="status" value="read"> Read
+                            <input type="radio" name="status" value="unread"> Unread
+                        </div>
+
+
+                        <div class="flex-row">
+                            <button type="submit">Add</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
     <footer></footer>
+    <script src="./books.js"></script>
 </body>
 </html>
