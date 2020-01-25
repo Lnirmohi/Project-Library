@@ -21,9 +21,6 @@ header {
 }
 
 .table-container {
-  display: flex;
-  flex-direction: row;
-
   padding: 60px 150px;
 
   height: 100vh;
@@ -62,15 +59,14 @@ tbody td {
 }
 
 .form-container {
-  /* position: fixed; */
-
+  display: inline-block;
   background: white;
 
   padding: 28px 30px;
-
-  float: right;
-
   margin-left: 80px;
+
+  width: 400px;
+  height: 400px;
 }
 
 #add-book-btn,
