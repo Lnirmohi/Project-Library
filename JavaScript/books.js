@@ -33,7 +33,8 @@ function processFormData(formValues) {
     for(let i = 0; i < formValues.length; i++) {
 
         let element = formValues[i];
-
+        
+        //skip values of button and unchecked radio button
         if(element.nodeName === "BUTTON" ||
             (element.type === "radio" && element.checked === false)
         ) {
@@ -47,24 +48,25 @@ function processFormData(formValues) {
 
     const tableRow = createTableRowForBook(valueArr, myLibrary.length);
 
-    addBookToTable(tableRow);
-
     addBookToLibrary(new books(...valueArr));
+
+    addBookToTableDisplay(tableRow);
 }
 
 
 function addBookToLibrary(book, index = null) {
     
+    //if index of book to be added is specified
     if(index !== null) {
         myLibrary.splice(index, 0, book);
     }else {
         myLibrary.push(book);
     }
 
-    console.table(myLibrary);
+    //console.table(myLibrary);
 }
 
-function addBookToTable(book) {
+function addBookToTableDisplay(book) {
 
     tableBody.appendChild(book);
 }
@@ -83,16 +85,18 @@ function createTableRowForBook(valuesForRow, index) {
 
     const tr = document.createElement("tr");
 
-    tr.setAttribute("data-index", index);
+    tr.setAttribute("data-index", index+1);
 
-    tr.textContent = index;
+    const tdForIndex = document.createElement("td");
+    tdForIndex.textContent = index + 1;
+    tr.appendChild(tdForIndex);
 
     for(let i = 0; i < valuesForRow.length;i++) {
 
         let value = valuesForRow[i];
 
         const td = document.createElement("td");
-
+        
         td.textContent = value;
 
         tr.appendChild(td);
