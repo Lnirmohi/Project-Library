@@ -1,13 +1,141 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #F4F6FA;
+
+  font-family: Muli;
 }
 
 header {
-    background: rgb(26,141,95);
-    color: white;
+  background: rgb(26,141,95);
+  color: white;
 
-    height: 200px;
-    width: 100%;
+  padding: 60px 150px 30px;
+
+  height: 152px;
+  width: 100%;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: row;
+
+  padding: 60px 150px;
+
+  height: 100vh;
+  width: 100vw;
+
+  background: #F4F6FA;
+}
+
+#serial-no {
+  width: 80px;
+}
+
+table, th, td {
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+  padding: 10px;
+}
+
+th {
+  letter-spacing: 2px;
+  width: 200px;
+}
+
+td {
+  letter-spacing: 1px;
+  padding: 8px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+.form-container {
+  /* position: fixed; */
+
+  background: white;
+
+  padding: 28px 30px;
+
+  float: right;
+
+  margin-left: 80px;
+}
+
+#add-book-btn,
+#remove-book-btn{
+  border: 2px solid #1a8d5f;
+  border-radius: 14px;
+  margin-bottom: 30px;
+
+  background: white;
+  color: #1a8d5f;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  padding: 10px 17px;
+}
+
+#remove-book-btn {
+  border: 2px solid #FD5959;
+  color: #FD5959;
+}
+
+#add-book-btn:hover{
+  background: #1a8d5f;
+  color: white;
+}
+
+#remove-book-btn:hover {
+  background: #FD5959;
+  color: white;
+}
+
+
+.form-field {
+  margin-bottom: 25px;
+}
+
+input {
+  margin-left: 60px;
+  padding: 6px 10px;
+}
+
+input[type="radio"] {
+  margin-top: 4px;
+  margin-right: 6px;
+}
+
+label,
+legend {
+  font-size: 16px;
+  color: #9FA1A3;
+}
+
+.no-border {
+  border: none;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
