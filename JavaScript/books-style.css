@@ -20,6 +20,10 @@ header {
   width: 100%;
 }
 
+.absolute-position {
+  position: absolute;
+}
+
 .table-container {
   padding: 60px 150px;
 
@@ -63,7 +67,10 @@ tbody td {
   background: white;
 
   padding: 28px 30px;
-  margin-left: 80px;
+  margin: auto;
+  
+  left: 0;
+  right: 0;
 
   width: 400px;
   height: 400px;
