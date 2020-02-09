@@ -12,65 +12,64 @@
         <h1 class="heading">Library</h1>
     </header>
     <main>
-        <div class="button-container" id="section-1">
+        <div class="button-container">
             <button id="add-book-btn">Add Book</button>
             <button id="remove-book-btn">Remove Book</button>
         </div>
-        <div id="section-2">
-            <div class="table-container absolute-position">
-                <table id="books-table">
-    
-                    <thead>
-                        <tr style="background-color: #F5F8FF">
-                            <th id="serial-no">#</th>
-                            <th>Book Name</th>
-                            <th>Author</th>
-                            <th>Pages</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    
-                    <tbody id="tbody">
-    
-                    </tbody>
-                </table>
+        
+        <div class="table-container absolute-position">
+            <table id="books-table">
+
+                <thead>
+                    <tr style="background-color: #F5F8FF">
+                        <th id="serial-no">#</th>
+                        <th>Book Name</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-container absolute-position">
+
+            <div id="close">
+                <p>&times;</p>
             </div>
-    
-            <div class="form-container absolute-position">
-    
-                <div id="close">
-                    <p>&times;</p>
+            <form action="#" class="hidden add-book-form flex-column" id="form">
+
+                <div class="form-field flex-row">
+                    <label for="book-name">Book name:</label>
+                    <input type="text" id="book-name">
                 </div>
-                <form action="#" class="hidden add-book-form flex-column" id="form">
-    
-                    <div class="form-field flex-row">
-                        <label for="book-name">Book name:</label>
-                        <input type="text" id="book-name">
-                    </div>
-    
-                    <div class="form-field flex-row">
-                        <label for="author">Author: </label>
-                        <input type="text" id="author">
-                    </div>
-    
-                    <div class="form-field flex-row">
-                        <label for="number-of-pages">Pages:</label>
-                        <input type="number" id="number-of-pages">
-                    </div>
-                    
-                    <div class="form-field flex-row">
-                        <legend>Read status</legend>
-    
-                        <input type="radio" name="status" value="read"> Read
-                        <input type="radio" name="status" value="unread"> Unread
-                    </div>
-    
-                    <div class="flex-row">
-                        <button type="submit">Add</button>
-                        <button type="reset">Reset</button>
-                    </div>
-                </form>
-            </div>
+
+                <div class="form-field flex-row">
+                    <label for="author">Author: </label>
+                    <input type="text" id="author">
+                </div>
+
+                <div class="form-field flex-row">
+                    <label for="number-of-pages">Pages:</label>
+                    <input type="number" id="number-of-pages">
+                </div>
+                
+                <div class="form-field flex-row">
+                    <legend>Read status</legend>
+
+                    <input type="radio" name="status" value="read"> Read
+                    <input type="radio" name="status" value="unread"> Unread
+                </div>
+
+                <div class="flex-row">
+                    <button type="submit">Add</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
         </div>
     </main>
     <footer></footer>
