@@ -24,6 +24,49 @@ header {
   position: absolute;
 }
 
+.button-container {
+  z-index: 1;
+
+  position: fixed;
+  
+  padding-left: 150px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-right: 30px;
+
+  bottom: 0;
+  right: 0;
+}
+
+#add-book-btn,
+#remove-book-btn{
+  border: 2px solid #1a8d5f;
+  border-radius: 14px;
+
+  background: white;
+  color: #1a8d5f;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  padding: 10px 17px;
+}
+
+#remove-book-btn {
+  border: 2px solid #FD5959;
+  color: #FD5959;
+}
+
+#add-book-btn:hover{
+  background: #1a8d5f;
+  color: white;
+}
+
+#remove-book-btn:hover {
+  background: #FD5959;
+  color: white;
+}
+
 .table-container {
   padding: 60px 150px;
 
@@ -88,43 +131,6 @@ td {
 
 tbody td {
   text-align: center;
-}
-
-.button-container {
-  background: #dfe6f4;
-  
-  padding-left: 150px;
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
-
-#add-book-btn,
-#remove-book-btn{
-  border: 2px solid #1a8d5f;
-  border-radius: 14px;
-
-  background: white;
-  color: #1a8d5f;
-
-  font-size: 20px;
-  font-weight: 400;
-
-  padding: 10px 17px;
-}
-
-#remove-book-btn {
-  border: 2px solid #FD5959;
-  color: #FD5959;
-}
-
-#add-book-btn:hover{
-  background: #1a8d5f;
-  color: white;
-}
-
-#remove-book-btn:hover {
-  background: #FD5959;
-  color: white;
 }
 
 .form-container {
