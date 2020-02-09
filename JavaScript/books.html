@@ -12,6 +12,10 @@
         <h1 class="heading">Library</h1>
     </header>
     <main>
+        <div class="button-container">
+            <button id="add-book-btn">Add Book</button>
+            <button id="remove-book-btn">Remove Book</button>
+        </div>
         <div class="table-container absolute-position">
             <table id="books-table">
 
@@ -32,11 +36,10 @@
         </div>
 
         <div class="form-container  absolute-position">
-            <div class="flex-row">
-                <button id="add-book-btn">Add Book</button>
-                <button id="remove-book-btn">Remove Book</button>
-            </div>
 
+            <div id="close">
+                <p>&times;</p>
+            </div>
             <form action="#" class="hidden add-book-form flex-column" id="form">
 
                 <div class="form-field flex-row">
@@ -53,7 +56,6 @@
                     <label for="number-of-pages">Pages:</label>
                     <input type="number" id="number-of-pages">
                 </div>
-
                 
                 <div class="form-field flex-row">
                     <legend>Read status</legend>
@@ -61,7 +63,6 @@
                     <input type="radio" name="status" value="read"> Read
                     <input type="radio" name="status" value="unread"> Unread
                 </div>
-
 
                 <div class="flex-row">
                     <button type="submit">Add</button>
