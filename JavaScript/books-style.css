@@ -20,8 +20,24 @@ header {
   width: 100%;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .absolute-position {
   position: absolute;
+}
+
+.no-border {
+  border: none;
 }
 
 .button-container {
@@ -134,7 +150,8 @@ tbody td {
 }
 
 .form-container {
-  visibility: hidden;
+  position: fixed;
+  /* visibility: hidden; */
 
   display: inline-block;
   background: white;
@@ -146,7 +163,7 @@ tbody td {
   right: 0;
 
   width: 400px;
-  height: 340px;
+  height: 365px;
 }
 
 .form-field {
@@ -169,18 +186,52 @@ legend {
   color: #9FA1A3;
 }
 
-.no-border {
-  border: none;
+.form-button-container {
+  justify-content: flex-end;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.form-button-container button {
+  margin-left: 18px;
+  border-radius: 8px;
+
+  font-size: 18px;
+
+  width: 90px;
+  height: 40px;
 }
 
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.form-button-container button[type="submit"] {
+  background: white;
+  color: #7261C4;
+
+  border: 2px solid #7261C4;
+}
+
+.form-button-container button[type="submit"]:hover {
+  background: #7261C4;
+  color: white;
+
+  cursor: pointer;
+}
+
+.form-button-container button[type="submit"]:active {
+  background: #3e27b1;
+}
+
+.form-button-container button[type="reset"] {
+  background: white;
+  color: #606060;
+
+  border: 2px solid #606060;
+
+  cursor: pointer;
+}
+
+.form-button-container button[type="reset"]:hover {
+  background: #606060;
+  color: white;
+}
+
+.form-button-container button[type="reset"]:active {
+  background: #353535;
 }
