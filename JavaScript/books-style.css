@@ -20,16 +20,104 @@ header {
   width: 100%;
 }
 
-.table-container {
+.flex-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.absolute-position {
+  position: absolute;
+}
+
+.no-border {
+  border: none;
+}
+
+.button-container {
+  z-index: 1;
+
+  position: fixed;
+  
+  padding-left: 150px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-right: 30px;
+
+  bottom: 0;
+  right: 0;
+}
+
+#add-book-btn,
+#remove-book-btn{
+  border: 2px solid #1a8d5f;
+  border-radius: 14px;
+
+  background: white;
+  color: #1a8d5f;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  padding: 10px 17px;
+}
+
+#remove-book-btn {
+  border: 2px solid #FD5959;
+  color: #FD5959;
+}
+
+#add-book-btn:hover{
+  background: #1a8d5f;
+  color: white;
+}
+
+#remove-book-btn:hover {
+  background: #FD5959;
+  color: white;
+}
+
+.table-container {
   padding: 60px 150px;
 
   height: 100vh;
   width: 100vw;
 
   background: #F4F6FA;
+}
+
+#close {
+  display: flex;
+  flex-direction: row-reverse;
+  
+  padding-bottom: 12px;
+}
+
+#close p {
+  font-size: 20px;
+  font-weight: 900;
+
+  background: #f3f3f3;
+
+  text-align: center;
+
+  height: 30px;
+  width: 30px;
+}
+
+#close p:hover {
+  background: #cfcfcf;
+  cursor: pointer;
+}
+
+#close p:active {
+  background: #a3a3a3;
 }
 
 #serial-no {
@@ -62,47 +150,21 @@ tbody td {
 }
 
 .form-container {
-  /* position: fixed; */
+  position: fixed;
+  /* visibility: hidden; */
 
+  display: inline-block;
   background: white;
 
-  padding: 28px 30px;
+  padding: 12px 30px 0;
+  margin: auto;
+  
+  left: 0;
+  right: 0;
 
-  float: right;
-
-  margin-left: 80px;
+  width: 400px;
+  height: 365px;
 }
-
-#add-book-btn,
-#remove-book-btn{
-  border: 2px solid #1a8d5f;
-  border-radius: 14px;
-  margin-bottom: 30px;
-
-  background: white;
-  color: #1a8d5f;
-
-  font-size: 20px;
-  font-weight: 400;
-
-  padding: 10px 17px;
-}
-
-#remove-book-btn {
-  border: 2px solid #FD5959;
-  color: #FD5959;
-}
-
-#add-book-btn:hover{
-  background: #1a8d5f;
-  color: white;
-}
-
-#remove-book-btn:hover {
-  background: #FD5959;
-  color: white;
-}
-
 
 .form-field {
   margin-bottom: 25px;
@@ -124,18 +186,52 @@ legend {
   color: #9FA1A3;
 }
 
-.no-border {
-  border: none;
+.form-button-container {
+  justify-content: flex-end;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.form-button-container button {
+  margin-left: 18px;
+  border-radius: 8px;
+
+  font-size: 18px;
+
+  width: 90px;
+  height: 40px;
 }
 
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.form-button-container button[type="submit"] {
+  background: white;
+  color: #7261C4;
+
+  border: 2px solid #7261C4;
+}
+
+.form-button-container button[type="submit"]:hover {
+  background: #7261C4;
+  color: white;
+
+  cursor: pointer;
+}
+
+.form-button-container button[type="submit"]:active {
+  background: #3e27b1;
+}
+
+.form-button-container button[type="reset"] {
+  background: white;
+  color: #606060;
+
+  border: 2px solid #606060;
+
+  cursor: pointer;
+}
+
+.form-button-container button[type="reset"]:hover {
+  background: #606060;
+  color: white;
+}
+
+.form-button-container button[type="reset"]:active {
+  background: #353535;
 }
