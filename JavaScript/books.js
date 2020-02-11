@@ -1,9 +1,3 @@
-let myLibrary = [];
-
-const form = document.getElementById("form");
-
-const tableBody = document.getElementById("tbody");
-
 function books(title, author, noOfPages, isBookRead) {
 
     this.title = title;
@@ -16,6 +10,14 @@ function books(title, author, noOfPages, isBookRead) {
     };
 }
 
+let myLibrary = [];
+
+const form = document.getElementById("form");
+const tableBody = document.getElementById("tbody");
+const removeBookBtn = document.getElementById("remove-book-btn");
+const addBookBtn = document.getElementById("add-book-btn");
+const closeFormBtn = document.getElementById("close-form");
+
 form.onsubmit = (event) => {
 
     event.preventDefault();
@@ -24,6 +26,43 @@ form.onsubmit = (event) => {
 
     //console.log(event.target.elements);
 };
+
+addBookBtn.addEventListener("click", toggleFormDisplay);
+closeFormBtn.addEventListener("click", toggleFormDisplay);
+removeBookBtn.addEventListener("click", toggleRemoveBtnDisplay);
+
+// toggles form display
+function toggleFormDisplay(event) {
+
+    const formContainer = document.getElementById("add-book-form");
+
+    if(formContainer.classList.contains("hidden")) {
+
+        formContainer.classList.remove("hidden");
+    }else {
+
+        formContainer.classList.add("hidden");
+    }
+}
+
+function toggleRemoveBtnDisplay(event) {
+
+    let removeBtnList = [...document.getElementsByClassName("remove-book-btn")];
+
+    if(removeBtnList[0].classList.contains("hidden")) {
+
+        removeBtnList.forEach((btn) => {
+
+            btn.classList.remove("hidden");
+        });
+    }else {
+
+        removeBtnList.forEach((btn) => {
+
+            btn.classList.add("hidden");
+        });
+    }
+}
 
 function processFormData(formValues) {
 
@@ -59,6 +98,7 @@ function addBookToLibrary(book, index = null) {
     //if index of book to be added is specified
     if(index !== null) {
         myLibrary.splice(index, 0, book);
+        refreshBookTable();
     }else {
         myLibrary.push(book);
     }
@@ -75,7 +115,7 @@ function render() {
     
     for (let index = 0; index < myLibrary.length; index++) {
 
-        let [name, author, pages, status] = [...myLibrary[i]];
+        //let [name, author, pages, status] = [...myLibrary[i]];
         
         createTableRowForBook(myLibrary[i], index);
     }
@@ -102,5 +142,34 @@ function createTableRowForBook(valuesForRow, index) {
         tr.appendChild(td);
     }
 
+    // add delete at the end of each book on the last table-column
+    const deleteBtn = document.createElement("td");
+    deleteBtn.setAttribute("class", "remove-book-btn");
+    deleteBtn.classList.add("hidden");
+
+    deleteBtn.appendChild(createDeleteButton());
+
+    tr.appendChild(deleteBtn);
+
     return tr;
+}
+
+function removeTableRows() {
+
+    let newtbody = document.createElement("tbody");
+    newtbody.setAttribute("id", "tbody");
+
+    let oldtbody = document.getElementById("tbody");
+
+    oldtbody.parentNode.replaceChild(oldtbody, newtbody);
+}
+
+function createDeleteButton() {
+
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "X";
+
+    deleteButton.style.cssText = "background: #FEEEE6; color: #EF7748; font-size: 18px ;font-weight: 700; border: none";
+
+    return deleteButton;
 }
