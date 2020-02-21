@@ -18,18 +18,18 @@ const removeBookBtn = document.getElementById("remove-book-btn");
 const addBookBtn = document.getElementById("add-book-btn");
 const closeFormBtn = document.getElementById("close-form");
 
+addBookBtn.addEventListener("click", toggleFormDisplay);
+closeFormBtn.addEventListener("click", toggleFormDisplay);
+removeBookBtn.addEventListener("click", toggleRemoveBtnDisplay);
+
 form.onsubmit = (event) => {
 
     event.preventDefault();
 
     processFormData([...event.target.elements]);
 
-    //console.log(event.target.elements);
+    toggleRemoveBookBtnStatus();
 };
-
-addBookBtn.addEventListener("click", toggleFormDisplay);
-closeFormBtn.addEventListener("click", toggleFormDisplay);
-removeBookBtn.addEventListener("click", toggleRemoveBtnDisplay);
 
 // toggles form display
 function toggleFormDisplay(event) {
@@ -47,9 +47,11 @@ function toggleFormDisplay(event) {
 
 function toggleRemoveBtnDisplay(event) {
 
-    let removeBtnList = [...document.getElementsByClassName("remove-book-btn")];
+    let removeBtnList = [...document.getElementsByClassName("delete-book")];
 
     if(removeBtnList[0].classList.contains("hidden")) {
+
+        console.log(event.target);
 
         removeBtnList.forEach((btn) => {
 
@@ -62,6 +64,8 @@ function toggleRemoveBtnDisplay(event) {
             btn.classList.add("hidden");
         });
     }
+
+    toggleRemoveBookBtnStatus();
 }
 
 function processFormData(formValues) {
@@ -83,8 +87,6 @@ function processFormData(formValues) {
         valueArr.push(element.value);
     }
 
-    //console.log(valueArr);
-
     const tableRow = createTableRowForBook(valueArr, myLibrary.length);
 
     addBookToLibrary(new books(...valueArr));
@@ -102,8 +104,6 @@ function addBookToLibrary(book, index = null) {
     }else {
         myLibrary.push(book);
     }
-
-    //console.table(myLibrary);
 }
 
 function addBookToTableDisplay(book) {
@@ -114,8 +114,6 @@ function addBookToTableDisplay(book) {
 function render() {
     
     for (let index = 0; index < myLibrary.length; index++) {
-
-        //let [name, author, pages, status] = [...myLibrary[i]];
         
         createTableRowForBook(myLibrary[i], index);
     }
@@ -144,8 +142,7 @@ function createTableRowForBook(valuesForRow, index) {
 
     // add delete at the end of each book on the last table-column
     const deleteBtn = document.createElement("td");
-    deleteBtn.setAttribute("class", "remove-book-btn");
-    deleteBtn.classList.add("hidden");
+    deleteBtn.classList.add("hidden", "delete-book");
 
     deleteBtn.appendChild(createDeleteButton());
 
@@ -169,7 +166,19 @@ function createDeleteButton() {
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "X";
 
-    deleteButton.style.cssText = "background: #FEEEE6; color: #EF7748; font-size: 18px ;font-weight: 700; border: none";
+    deleteButton.style.cssText = "background: #FEEEE6; color: #EF7748; font-size: 16px ;font-weight: 700; border: none; height: 30px; width: 22px";
 
     return deleteButton;
+}
+
+// if there is book in libraby then the remove-book-btn is enable else disabled
+function toggleRemoveBookBtnStatus() {
+
+    if(myLibrary.length > 0) {
+
+        removeBookBtn.disabled = false;
+    }else {
+
+        removeBookBtn.disabled = true;
+    }
 }
