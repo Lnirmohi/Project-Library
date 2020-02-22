@@ -14,7 +14,7 @@
     <main>
         <div class="button-container">
             <button id="add-book-btn">Add Book</button>
-            <button id="remove-book-btn">Remove Book</button>
+            <button id="remove-book-btn" disabled>Remove Book</button>
         </div>
         
         <div class="table-container absolute-position">
@@ -45,24 +45,24 @@
 
                 <div class="form-field flex-row">
                     <label for="book-name">Book name:</label>
-                    <input type="text" id="book-name">
+                    <input type="text" id="book-name" required>
                 </div>
 
                 <div class="form-field flex-row">
                     <label for="author">Author: </label>
-                    <input type="text" id="author">
+                    <input type="text" id="author" required>
                 </div>
 
                 <div class="form-field flex-row">
                     <label for="number-of-pages">Pages:</label>
-                    <input type="number" id="number-of-pages">
+                    <input type="number" id="number-of-pages" required>
                 </div>
                 
                 <div class="form-field flex-row">
                     <legend>Read status</legend>
 
-                    <input type="radio" name="status" value="read"> Read
-                    <input type="radio" name="status" value="unread"> Unread
+                    <input type="radio" name="status" value="read"  required> Read
+                    <input type="radio" name="status" value="unread"  required> Unread
                 </div>
 
                 <div class="flex-row form-button-container">
