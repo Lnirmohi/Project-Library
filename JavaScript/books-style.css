@@ -77,12 +77,18 @@ header {
   color: #FD5959;
 }
 
+#remove-book-btn:disabled {
+  background: #ccc;
+  color: white;
+  border: 2px solid #ccc;
+}
+
 #add-book-btn:hover{
   background: #1a8d5f;
   color: white;
 }
 
-#remove-book-btn:hover {
+#remove-book-btn:not(:disabled):hover {
   background: #FD5959;
   color: white;
 }
